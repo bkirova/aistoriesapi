@@ -5,6 +5,7 @@ const port = 9000
 
 const latestRout = require('./api/ai/latest');
 const generateRandomAIPost = require('./utils').generateRandomAIPost;
+const imageData = require('./utils').imageData;
 
 app.use(cors());
 
@@ -41,9 +42,20 @@ io.sockets.on('connection', function(socket) {
     setTimeout(() => handler(), 3000)
   })
 
+  socket.on('analize', () => {
+
+    setTimeout(() => {
+      io.sockets.emit('analize_update', imageData.images[Math.floor(Math.random()*imageData.images.length)])
+    }, 1000)
+
+    setTimeout(() => {
+      io.sockets.emit('analize_ready', {})
+    }, 3000)
+  })
+
   socket.on('disconnect', function() {
     console.log(`Client with ID of ${socket.id} disconnected!`)
- });
+  });
 })
 
 server.listen(port, () => {
