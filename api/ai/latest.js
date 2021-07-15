@@ -5,6 +5,6 @@ module.exports = (req, res) => {
     let item2 = generateRandomAIPost()
     let item3 = generateRandomAIPost()
     res.json({
-      latest: [item1, item2, item3]
+      items: [item1, item2, item3]
     });
 };
