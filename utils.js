@@ -1,5 +1,5 @@
-const generateRandomAIPost = function() {  
-    let images = ['/images/1.jpg', '/images/2.jpg', '/images/3.jpg'];
+const generateRandomAIPost = function() {
+    let images = ['/images/1.jpg', '/images/2.jpg', '/images/3.jpg', '/images/4.jpg'];
     let emojis = ["🐕","🐾","🐩","🐶","🐕‍🦺","🦮"].sort( () => .5 - Math.random() );;
     let comments =  ["cool!!!", "This is amazing", "wow this looks great"];
     let userNames = ["bri_123", "sam_got_2", "jennie_smt", "dizzy_candy", "skol34", "hymy_jon"];
