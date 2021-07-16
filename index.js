@@ -1,7 +1,7 @@
 const cors = require("cors");
 const app = require('express')();
 const server = require('http').Server(app);
-const port = 8080
+const port = process.env.PORT || 8080;
 
 const latestRout = require('./api/ai/latest');
 const generateRandomAIPost = require('./utils').generateRandomAIPost;
